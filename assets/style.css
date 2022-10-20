@@ -1,0 +1,129 @@
+body {
+  background-image: url("img/gambar.png");
+  background-repeat: no-repeat;
+  color: white;
+  background-size: cover;
+  height: 100vh;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.test {
+  margin-top: 10%;
+  letter-spacing: 30px;
+}
+
+.test2 {
+  font-size: 20px;
+}
+
+.test3 {
+  position: absolute;
+  right: 0;
+  width: 120px;
+  color: white;
+  font-size: 19px;
+  margin-right: 20px;
+  padding: 6px;
+}
+
+.test4 {
+  width: 100%;
+}
+
+.test5 {
+  font-size: 25px;
+}
+
+.instagram {
+  margin-right: 10px;
+}
+
+.mb-50 {
+  margin-bottom: 50px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mini-img {
+  width: 46px;
+  height: 46px;
+}
+
+.text-alert {
+  font-size: 16px;
+}
+
+.mini-alert {
+  transform: scale(1) !important;
+}
+
+.modal-body {
+  text-align: center;
+}
+
+.text-modal {
+  color: black;
+  
+}
+
+.modal-img {
+  margin-bottom: 30px;
+  width: 147px;
+  height: 147px;
+}
+
+.h3-modal {
+  color: black;
+  margin-bottom: 20px;
+}
+
+
+@media only screen and (max-width: 572px) {
+  .test {
+    letter-spacing: 5px;
+    font-size: 30px;
+  }
+
+  .test2 {
+    font-size: 10px;
+  }
+
+  .test3 {
+    position: static;
+    width: 100%;
+  }
+
+  .test6 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .test8 {
+    width: 300px;
+    justify-content: center;
+  }
+
+  .test4 {
+    width: 300px;
+    padding: 7px !important;
+  }
+
+  .test5 {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+
+  .mini-img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .text-alert {
+    font-size: 10px;
+  }
+
+}
