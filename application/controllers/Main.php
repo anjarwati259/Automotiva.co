@@ -27,7 +27,7 @@ class Main extends CI_Controller
 		$this->sendEmail($paramemail);
 	}
 
-	public function sendEmail($email)
+	public function sendEmail()
 	{
 		$emailSubject = 'Submitting by Email Confirmation';
 
@@ -69,7 +69,7 @@ class Main extends CI_Controller
 		$curl_data = array(
 			"email_sender" => ["name" => "Automotiva", "email" => "automotiva@gmail.com"],
 			"email_replyto" => ["name" => "Automotiva", "email" => "automotiva@gmail.com"],
-			"email_tos" => [["email" => $email, "name" => "l"]],
+			"email_tos" => [["email" => "retnoanjarwati18@gmail.com", "name" => "l"]],
 			"email_subject" => $emailSubject,
 			"email_body" => $emailBody,
 
@@ -89,5 +89,26 @@ class Main extends CI_Controller
 
 	public function sender_email()
 	{
+		$paramemail = $this->input->post('email');
+		// laurentbrenkmanwilly@gmail.com
+		$curl_data = array(
+		    "email_sender" => '{"name":"test Ikhwan","email":"automotiva@gmail.com"}',
+		    "email_replyto" => '{"name":"ikhwan","email":"laurentbrenkmanwilly@gmail.com"}',
+		    "email_tos" => '[{"name":"willy","email":"'.$paramemail.'"}]',
+		    "email_subject" => 'TEST SUBJECT EMAIL KIRIM coba',
+		    "email_body" => "COBA EMAIL ISI DONG coba"
+
+		);
+
+
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, 'https://email-api.pitjarus.co/send_mail');
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $curl_data);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		$output = json_decode(curl_exec($ch));
+		curl_close($ch);
+
+		echo json_encode($output);
 	}
 }

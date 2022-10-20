@@ -21,21 +21,15 @@
           $('#alert-error').fadeOut(1000);
         }, 5000);
       } else {
-        // $("#btn-trigger").click();
+        $("#btn-trigger").click();
         $.ajax({
-          url: baseurl + "index.php/main/sender_email",
+          url: baseurl + "index.php/main/mailer",
           "type": "POST",
           "data": {
             "email": mailerdata
           },
-          "dataType":"JSON",
           success: function(data) {
-            // console.log(data.status)
-            if(data.status == 'success'){
-              $("#btn-trigger").click();
-            }else{
-              alert('error');
-            }
+            // $("#btn-trigger").click();
           }
         });
       }
